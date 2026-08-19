@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://rt.com.co</loc>
+    <loc>https://real-time-two-psi.vercel.app</loc>
     <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://rt.com.co/#soluciones</loc>
+    <loc>https://real-time-two-psi.vercel.app/#soluciones</loc>
     <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rt.com.co/#experiencia</loc>
+    <loc>https://real-time-two-psi.vercel.app/#experiencia</loc>
     <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rt.com.co/#novedades</loc>
+    <loc>https://real-time-two-psi.vercel.app/#novedades</loc>
     <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rt.com.co/#contacto</loc>
+    <loc>https://real-time-two-psi.vercel.app/#contacto</loc>
     <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
