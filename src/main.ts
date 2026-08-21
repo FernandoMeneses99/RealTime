@@ -1,5 +1,6 @@
 import './style.css'
 import { initCookieConsent } from './cookie-consent'
+import { initContactForm } from './contact-form'
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
@@ -12,7 +13,7 @@ app.innerHTML = `
     </a>
     <nav class="nav-links" aria-label="Navegación principal">
       <a href="#soluciones">Soluciones</a>
-      <a href="#servicios">Servicios</a>
+      <a href="#soluciones">Servicios</a>
       <a href="#experiencia">Nosotros</a>
       <a href="#novedades">Novedades</a>
       <a href="#contacto" class="nav-cta">Contáctenos</a>
@@ -352,8 +353,121 @@ En un mundo donde las ciberamenazas son inevitables, la resiliencia marca la dif
 </section>
 </main>
 
+<!-- ===== CONTACT FORM ===== -->
+<section class="contact" id="contacto" aria-label="Formulario de contacto">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <div class="section-label">Contacto</div>
+        <h2 class="section-title">Hablemos de la seguridad de su organización</h2>
+        <p class="section-subtitle">
+          Complete el formulario y uno de nuestros expertos se pondrá en contacto con usted para entender sus necesidades y diseñar la solución adecuada.
+        </p>
+
+        <ul class="contact-details">
+          <li class="contact-detail">
+            <span class="contact-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4FD290" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+            <div>
+              <span class="contact-detail-label">Correo</span>
+              <a href="mailto:info@rt.com.co">info@rt.com.co</a>
+            </div>
+          </li>
+          <li class="contact-detail">
+            <span class="contact-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4FD290" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <div>
+              <span class="contact-detail-label">Teléfono</span>
+              <a href="tel:+5717943337">+57 17943337</a>
+            </div>
+          </li>
+          <li class="contact-detail">
+            <span class="contact-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4FD290" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div>
+              <span class="contact-detail-label">Ubicación</span>
+              <span>Bogotá D.C., Colombia</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="contact-badge">
+          <span class="hero-badge-dot"></span>
+          Respuesta en menos de 24 horas hábiles
+        </div>
+      </div>
+
+      <div class="contact-form-card">
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-nombre">Nombre completo <span aria-hidden="true">*</span></label>
+              <input type="text" id="cf-nombre" name="nombre" required autocomplete="name" placeholder="Su nombre" />
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Correo corporativo <span aria-hidden="true">*</span></label>
+              <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder="nombre@empresa.com" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-telefono">Teléfono</label>
+              <input type="tel" id="cf-telefono" name="telefono" autocomplete="tel" placeholder="+57 300 000 0000" />
+            </div>
+            <div class="form-group">
+              <label for="cf-empresa">Empresa <span aria-hidden="true">*</span></label>
+              <input type="text" id="cf-empresa" name="empresa" required autocomplete="organization" placeholder="Nombre de su empresa" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-servicio">Servicio de interés</label>
+            <select id="cf-servicio" name="servicio">
+              <option value="">Seleccione una opción (opcional)</option>
+              <option value="Integración de Soluciones TIC">Integración de Soluciones TIC</option>
+              <option value="Servicios Gestionados">Servicios Gestionados</option>
+              <option value="SOC como Servicio">SOC como Servicio</option>
+              <option value="Consultoría TIC">Consultoría TIC</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-mensaje">Mensaje <span aria-hidden="true">*</span></label>
+            <textarea id="cf-mensaje" name="mensaje" rows="5" required placeholder="Cuéntenos sobre su necesidad o proyecto"></textarea>
+          </div>
+
+          <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <div class="form-consent">
+            <input type="checkbox" id="cf-consent" name="consentimiento" required />
+            <label for="cf-consent">
+              Autorizo de manera libre, expresa e informada el tratamiento de mis datos personales conforme a la
+              <a href="https://rt.com.co/wp-content/uploads/2025/09/POLITICA-DE-PRIVACIDAD-Y-TRATAMIENTO-DE-DATOS.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidad y Tratamiento de Datos Personales</a>
+              de RT. <span aria-hidden="true">*</span>
+            </label>
+          </div>
+
+          <button type="submit" id="form-submit" class="btn-primary form-submit">
+            Enviar mensaje
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
-<footer class="footer" id="contacto" role="contentinfo">
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -539,6 +653,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations()
   injectDynamicJSONLD()
   initCookieConsent()
+  initContactForm()
 })
 
 /* ============================================
