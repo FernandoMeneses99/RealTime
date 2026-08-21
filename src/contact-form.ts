@@ -1,16 +1,16 @@
 import emailjs from '@emailjs/browser'
 
-const EMAILJS_PUBLIC_KEY = 'TU_PUBLIC_KEY'
-const EMAILJS_SERVICE_ID = 'TU_SERVICE_ID'
-const EMAILJS_TEMPLATE_ID = 'TU_TEMPLATE_ID'
+const EMAILJS_PUBLIC_KEY = 'v9Gg4_hoWSHtFF_yI'
+const EMAILJS_SERVICE_ID = 'service_mp1yyv8'
+const EMAILJS_TEMPLATE_ID = 'template_ktu16zv'
 
 type StatusType = 'success' | 'error' | 'info'
 
 function isEmailJSConfigured(): boolean {
   return (
-    EMAILJS_PUBLIC_KEY !== 'TU_PUBLIC_KEY' &&
-    EMAILJS_SERVICE_ID !== 'TU_SERVICE_ID' &&
-    EMAILJS_TEMPLATE_ID !== 'TU_TEMPLATE_ID'
+    EMAILJS_PUBLIC_KEY !== 'v9Gg4_hoWSHtFF_yI' &&
+    EMAILJS_SERVICE_ID !== 'service_mp1yyv8' &&
+    EMAILJS_TEMPLATE_ID !== 'template_ktu16zv'
   )
 }
 
