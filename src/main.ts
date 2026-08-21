@@ -1,4 +1,5 @@
 import './style.css'
+import { initCookieConsent } from './cookie-consent'
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
@@ -393,7 +394,12 @@ En un mundo donde las ciberamenazas son inevitables, la resiliencia marca la dif
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; ${new Date().getFullYear()} RT. Todos los derechos reservados. <a href="https://rt.com.co/wp-content/uploads/2025/09/POLITICA-DE-PRIVACIDAD-Y-TRATAMIENTO-DE-DATOS.pdf" class="footer-privacy-link">Política de Privacidad</a></p>
+      <p>&copy; ${new Date().getFullYear()} RT. Todos los derechos reservados.</p>
+      <ul class="footer-legal-links">
+        <li><a href="https://rt.com.co/wp-content/uploads/2025/09/POLITICA-DE-PRIVACIDAD-Y-TRATAMIENTO-DE-DATOS.pdf" target="_blank" rel="noopener noreferrer">Política de Privacidad</a></li>
+        <li><a href="#" id="cookie-policy-page-link">Política de Cookies</a></li>
+        <li><button type="button" id="cookie-settings" class="footer-legal-button">Configuración de Cookies</button></li>
+      </ul>
       <div class="footer-socials">
         <a href="#" class="footer-social-link" aria-label="LinkedIn">in</a>
         <a href="#" class="footer-social-link" aria-label="Twitter">X</a>
@@ -477,8 +483,10 @@ function initHeaderScroll() {
 function initSmoothScroll() {
   document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
+      const href = anchor.getAttribute('href')
+      if (!href || href === '#') return
       e.preventDefault()
-      const target = document.querySelector(anchor.getAttribute('href') || '')
+      const target = document.querySelector(href)
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
@@ -530,6 +538,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll()
   initScrollAnimations()
   injectDynamicJSONLD()
+  initCookieConsent()
 })
 
 /* ============================================
